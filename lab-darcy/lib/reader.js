@@ -2,10 +2,6 @@
 
 const fs = require('fs');
 
-// const pygmalion = require('../assets/Pygmalion.txt');
-// const mySecretLife = require('../MySecretLife.txt');
-// const letter = require('../Letter.txt');
-
 // function readerCb(err, results) {
 //     if(err) throw err;
 //     console.log("file 1 was:", results[0]);
@@ -25,10 +21,14 @@ function readAllFiles(paths, readerCb) {
             let str = data.toString();
             results.push(str);
             console.log("file=", str);
-        });
+            if(paths.length === results.length) {
+            console.log("results= ", results);
+            }
+        })
     }
-    if(paths.length === results.length) {
-        console.log("results= ", results);
+
+    function fileHandler () {
+        
     }
 }
 readAllFiles(assets);
